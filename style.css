@@ -6,21 +6,64 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-canvas{
-    background-color: whitesmoke;
-}
-
 .container{
     width: 90%;
     margin: auto;
 }
 
+canvas{
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: whitesmoke;
+}
+
+.controlSimulation {
+    position: absolute;
+    left: 60px;
+    top: 100px;
+    padding: 0px 20px 10px 10px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#textVelocidad{
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    background-color: rgba(0,0,0,0.4);
+    height: 25px;
+    color: white;
+    border-radius: 8px;
+}
 #textBox{
-    background-color:brown;
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    width: 140px;
+    height: 10px;
+    background-color:yellowgreen;
     color: white;
     padding: 8px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+    border: black;
+    border-radius: 8px;
     cursor: pointer;
+}
+
+#startSimulation{
+    position: absolute;
+    top: 95px;
+    left: 10px;
 }

@@ -14,4 +14,4 @@ Particula.prototype.draw = function(context){
     context.arc(this.x, this.y, this.radio, 0, 2*Math.PI, true);
     context.closePath();
     context.fill();
-}
+}   

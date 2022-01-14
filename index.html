@@ -13,13 +13,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
         <h1>MOVIMIENTO RECTILÍNEO UNIFORME</h1>
+        
+        <div class="controlSimulation">
+            <p id="textVelocidad">Velocidad:</p>
+            <input id="textBox" placeholder="Velocidad de la partícula" />
+            <br>
+            <button id="startSimulation">INICIAR</button>
+        </div>
+        
         <canvas id="canvas" width="800" height="300">
             Tu navegador no soporta CANVAS!
         </canvas>
+        
         <form>
-            Velocidad: <input id="textBox" placeholder="Velocidad de la partícula" />
+            <button id="draw">DETENER</button>
+            <br>
+            
             <br> 
         </form>
     </div>
