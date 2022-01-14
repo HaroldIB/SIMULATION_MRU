@@ -42,7 +42,7 @@ button {
 #textVelocidad{
     position: absolute;
     top: 55px;
-    left: 10px;
+    left: 45px;
     background-color: rgba(0,0,0,0.4);
     height: 25px;
     color: white;
@@ -51,7 +51,7 @@ button {
 #textBox{
     position: absolute;
     top: 70px;
-    left: 70px;
+    left: 105px;
     width: 140px;
     height: 10px;
     background-color:yellowgreen;
@@ -65,5 +65,5 @@ button {
 #startSimulation{
     position: absolute;
     top: 95px;
-    left: 10px;
+    left: 45px;
 }

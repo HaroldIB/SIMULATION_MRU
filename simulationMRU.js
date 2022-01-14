@@ -22,7 +22,7 @@ function canvasApp() {
     var dt;
     var t;
     var animId;
-    var animTime = 5;
+    var animTime = 60;
     var today = new Date();
     //Variables para dibujar la Grilla
     var xMin = 10;
@@ -35,6 +35,8 @@ function canvasApp() {
     //Dibujando la Cuadricula
     drawGrill();
     drawScreen();
+    drawRule();
+    timeSimulation();
 
     //Evento para escuchar el click del Butoon INICIAR
     startButton.addEventListener("click", beginSimulation, false);
@@ -81,6 +83,8 @@ function canvasApp() {
         context.clearRect(0, 0, canvas.width, canvas.height);
         drawScreen();
         drawGrill();
+        drawRule();
+        timeSimulation();
         particula.draw(context);
     };
 
@@ -93,7 +97,7 @@ function canvasApp() {
     function drawScreen() {
         //background
         context.fillStyle = "#ffffaa";
-        context.fillRect(0, 0, 800, 60);
+        context.fillRect(0, 0, 1080, 60);
         //text
         //Hora
         context.fillStyle = "#000000";
@@ -104,10 +108,40 @@ function canvasApp() {
         context.font = "25px _sans";
         context.textBaseline = "top";
         context.globalCompositeOperation = "source-over";
-        context.fillText("Movimiento Rectilíneo Uniforme", 200, 25);
+        context.fillText("Movimiento Rectilíneo Uniforme", 400, 25);
         //box
         context.strokeStyle = "#000000";
-        context.strokeRect(5, 5, 790, 50);
+        context.strokeRect(5, 5, 1070, 50);
+    }
+    //Función para dibujaer la Regla/Riel
+    function drawRule(){
+        context.globalCompositeOperation = "source-over";
+        context.fillStyle = "#474b4e";
+        context.fillRect(20, 210, 1040, 50);
+
+        context.strokeStyle = "white";
+        context.lineWidth =1;
+        for (let index = 0; index <= 100; index++) {
+            context.beginPath();
+            context.moveTo(60+index*10,210);
+            context.lineTo(60+index*10,235);
+            context.fillStyle = "white";
+            context.font = "7px _sans";
+            context.fillText(index, 55+index*10, 235);
+            context.stroke();
+            context.closePath();    
+        }
+    }
+    //Funcion para dibujar Tiempo de simulacion
+    function timeSimulation(){
+        //background
+        context.fillStyle = "black";
+        context.fillRect(20, 260, 150, 30);
+        //text
+        //Hora
+        context.fillStyle = "white";
+        context.font = "15px _san";
+        context.fillText("Tiempo: "+t, 25, 265);
     }
 
     //Función para dibujar la cuadricula
@@ -129,8 +163,8 @@ function canvasApp() {
 
     //Inicialización del objeto partícula
     particula = new Particula(20, "blue");
-    particula.x = 50;
-    particula.y = 250;
+    particula.x = 40;
+    particula.y = 190;
     // Tomar en cuenta que la Velocidad es en pixeles por segundo
     particula.vx = v;
     particula.draw(context);
